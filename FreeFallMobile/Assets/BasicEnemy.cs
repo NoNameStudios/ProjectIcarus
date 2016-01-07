@@ -27,7 +27,6 @@ public class BasicEnemy : MonoBehaviour
             transform.LookAt(player.transform.position);
             //Quaternion target = 
            // transform.position 
-         
         }
         else
         transform.localPosition += transform.forward * speed * Time.deltaTime;
