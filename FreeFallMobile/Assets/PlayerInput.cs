@@ -47,8 +47,11 @@ public class PlayerInput : MonoBehaviour
                                          , 0, 0)), 750.0f * Time.deltaTime);
             }
         }
+        Vector3 tempPos = this.gameObject.transform.position;
+        tempPos.x = Mathf.Clamp(tempPos.x,-10, 10);
+        tempPos.x = Mathf.Clamp(tempPos.y, -10, 10);
+        this.gameObject.transform.position = tempPos;
 
-        
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -62,6 +65,8 @@ public class PlayerInput : MonoBehaviour
                }
             }
         }
+
+    
     }
     void OnCollisionEnter(Collision other)
     {
