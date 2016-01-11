@@ -1,23 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnManager : MonoBehaviour {
+public class SpawnManager : MonoBehaviour
+{
     public GameObject[] spawnPoints;
     public GameObject enemy;
-    int spawnNumber;
+
+    bool canSpawn = true;
+    //int preSpawnNumber;
 	// Use this for initialization
 	void Start ()
     {
-        spawnPoints = GameObject.FindGameObjectsWithTag("Spawner");
-        spawnNumber = 0;
-        InvokeRepeating("Spawn", 1, 1);
+       // InvokeRepeating("Spawn", 1, 1);
 	}
-    void Spawn()
+    public void Spawn(int spawnNumber)
     {
-        if (spawnNumber >= spawnPoints.Length)
-            spawnNumber = 0;
-        Debug.Log(spawnNumber);
-        Instantiate(enemy, spawnPoints[spawnNumber].transform.position, Quaternion.identity);
-            spawnNumber++;
+        if (canSpawn)
+        {
+            Instantiate(enemy, spawnPoints[spawnNumber].transform.position, Quaternion.identity);
+            //preSpawnNumber = spawnNumber;
+            StartCoroutine("SpawnTimer");
+        }
     }
+    IEnumerator SpawnTimer()
+    {
+        canSpawn = false;
+        yield return new WaitForSeconds(.1f);
+        canSpawn = true;
+        yield return null;
+    }
+
 }

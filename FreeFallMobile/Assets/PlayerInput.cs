@@ -1,16 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerInput : MonoBehaviour
 {
     public GameObject cam = null;
+    public GameObject[] damageImages;
+    int damageCount = 0;
+    int health = 5;
 
     float vertRotationMultiplier = 60;
     Vector3 startVector;
+    bool invinc = false;
     void Awake()
     {
         if (cam == null)
             cam = GameObject.Find("Main Camera");
+        damageImages = GameObject.FindGameObjectsWithTag("DmgImg");
+        
     }
     void Start()
     {
@@ -56,5 +63,33 @@ public class PlayerInput : MonoBehaviour
             }
         }
     }
-
+    void OnCollisionEnter(Collision other)
+    {
+        if (damageCount/health > damageImages.Length)
+        {
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
+            return;
+        }
+        if (!invinc)
+        {
+            if (damageCount == health)
+            {
+                damageImages[0].GetComponent<Image>().enabled = true;
+            }
+            else if(damageCount == health * 2)
+            {
+                damageImages[1].GetComponent<Image>().enabled = true;
+            }
+            Debug.Log(damageCount);
+          damageCount++;
+            StartCoroutine("InvinceTimer");   
+        }
+       
+    }
+    IEnumerator InvinceTimer()
+    {
+        invinc = true;
+        yield return new WaitForSeconds(.5f);
+        invinc = false;
+    }
 }
