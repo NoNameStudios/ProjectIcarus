@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 64ad143194df86a44a7b66be6a20cfa9
+timeCreated: 1452645447
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: enemyBasicSpriteSheet_0
+    21300002: enemyBasicSpriteSheet_1
+    21300004: enemyBasicSpriteSheet_2
+    21300006: enemyBasicSpriteSheet_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: enemyBasicSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 340
+        width: 212
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 106, y: 39}
+        - {x: 99, y: 66}
+        - {x: 70, y: 101}
+        - {x: 29, y: 113}
+        - {x: -27, y: 113}
+        - {x: -60, y: 103}
+        - {x: -90, y: 83}
+        - {x: -106, y: 33}
+        - {x: -106, y: -48}
+        - {x: -89, y: -83}
+        - {x: -41, y: -113}
+        - {x: 29, y: -113}
+        - {x: 56, y: -101}
+        - {x: 86, y: -81}
+        - {x: 106, y: -28}
+    - name: enemyBasicSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 327
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66, y: 112.5}
+        - {x: -113, y: 72.5}
+        - {x: -113, y: -11.5}
+        - {x: -105, y: -13.5}
+        - {x: -96, y: -13.5}
+        - {x: -87, y: -9.5}
+        - {x: -86, y: -15.5}
+        - {x: -101, y: -13.5}
+        - {x: -111, y: -17.5}
+        - {x: -113, y: -25.5}
+        - {x: -113, y: -45.5}
+        - {x: -103, y: -95.5}
+        - {x: -43, y: -112.5}
+        - {x: 106, y: -112.5}
+        - {x: 113, y: -111.5}
+        - {x: 113, y: 112.5}
+    - name: enemyBasicSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 71
+        width: 221
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 83.5, y: -32.5}
+        - {x: 93.5, y: -37.5}
+        - {x: 105.5, y: -38.5}
+        - {x: 110.5, y: -36.5}
+        - {x: 110.5, y: 98.5}
+        - {x: 57.5, y: 112.5}
+        - {x: 20.5, y: 112.5}
+        - {x: 19.5, y: 95.5}
+        - {x: 15.5, y: 80.5}
+        - {x: 18.5, y: 99.5}
+        - {x: 14.5, y: 112.5}
+        - {x: -43.5, y: 112.5}
+        - {x: -56.5, y: 109.5}
+        - {x: -92.5, y: 60.5}
+        - {x: -95.5, y: 41.5}
+        - {x: -83.5, y: 35.5}
+        - {x: -101.5, y: 39.5}
+        - {x: -110.5, y: 37.5}
+        - {x: -110.5, y: 4.5}
+        - {x: -96.5, y: -8.5}
+        - {x: -97.5, y: -8.5}
+        - {x: -110.5, y: -17.5}
+        - {x: -110.5, y: -33.5}
+        - {x: -91.5, y: -109.5}
+        - {x: -84.5, y: -112.5}
+        - {x: 56.5, y: -112.5}
+        - {x: 75.5, y: -102.5}
+        - {x: 98.5, y: -54.5}
+        - {x: 95.5, y: -43.5}
+        - {x: 88.5, y: -36.5}
+    - name: enemyBasicSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 71
+        width: 213
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 40.5, y: -58.5}
+        - {x: 36.5, y: -76.5}
+        - {x: 38.5, y: -92.5}
+        - {x: 54.5, y: -112.5}
+        - {x: 64.5, y: -112.5}
+        - {x: 106.5, y: -66.5}
+        - {x: 106.5, y: 80.5}
+        - {x: 56.5, y: 112.5}
+        - {x: -59.5, y: 112.5}
+        - {x: -102.5, y: 91.5}
+        - {x: -106.5, y: 83.5}
+        - {x: -106.5, y: -66.5}
+        - {x: -85.5, y: -112.5}
+        - {x: 20.5, y: -112.5}
+        - {x: 24.5, y: -109.5}
+        - {x: 16.5, y: -83.5}
+        - {x: 4.5, y: -78.5}
+        - {x: -0.5, y: -76.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

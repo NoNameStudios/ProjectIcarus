@@ -2,10 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 public class PlayerInput : MonoBehaviour
 {
     public GameObject cam = null;
     public GameObject[] damageImages;
+    public GameObject gameManager;
     int damageCount = 0;
     int health = 5;
 
@@ -61,8 +63,8 @@ public class PlayerInput : MonoBehaviour
             {
                 if (hit.transform.gameObject.GetComponent<BasicEnemy>())
                {
-                  hit.transform.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
-               }
+                    gameManager.GetComponent<GameManagerScript>().EnemyDeath(10, hit.transform.gameObject);
+                }
             }
         }
 
@@ -70,24 +72,29 @@ public class PlayerInput : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        if (damageCount/health > damageImages.Length)
+        if (other.transform.gameObject.GetComponent<BasicEnemy>())
         {
-            SceneManager.LoadScene(0, LoadSceneMode.Single);
-            return;
-        }
-        if (!invinc)
-        {
-            if (damageCount == health)
+            gameManager.GetComponent<GameManagerScript>().EnemyDeath(0, other.transform.gameObject);
+
+            if (damageCount / health > damageImages.Length)
             {
-                damageImages[0].GetComponent<Image>().enabled = true;
+                SceneManager.LoadScene(0, LoadSceneMode.Single);
+                return;
             }
-            else if(damageCount == health * 2)
+            if (!invinc)
             {
-                damageImages[1].GetComponent<Image>().enabled = true;
+                if (damageCount == health)
+                {
+                    damageImages[0].GetComponent<Image>().enabled = true;
+                }
+                else if (damageCount == health * 2)
+                {
+                    damageImages[1].GetComponent<Image>().enabled = true;
+                }
+                Debug.Log(damageCount);
+                damageCount++;
+                StartCoroutine("InvinceTimer");
             }
-            Debug.Log(damageCount);
-          damageCount++;
-            StartCoroutine("InvinceTimer");   
         }
        
     }

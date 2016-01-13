@@ -40,8 +40,8 @@ public class BasicEnemy : MonoBehaviour
         //transform.LookAt(player.transform.position);
              active = false;
             yield return new WaitForSeconds(5);
-        gameManager.GetComponent<GameManagerScript>().EnemyDeath(10, gameObject);
-            Destroy(gameObject);
+        gameManager.GetComponent<GameManagerScript>().EnemyDeath(5, gameObject);
+            //Destroy(gameObject);
             yield return null;
     }
 

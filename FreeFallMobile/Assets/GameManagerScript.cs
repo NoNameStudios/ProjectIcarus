@@ -23,5 +23,6 @@ public class GameManagerScript : MonoBehaviour
         this.score += score;
         enemies.Remove(enemy);
         scoreCounter.GetComponent<Text>().text = "" + this.score;
+        Destroy(enemy);
     }
 }
