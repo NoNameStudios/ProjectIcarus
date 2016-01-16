@@ -6,7 +6,7 @@ public class BasicEnemy : MonoBehaviour
     public GameObject player;
     public GameObject gameManager;
     public int speed = 5;
-
+    public GameObject sprite;
    
     bool active = true;
 	// Use this for initialization
@@ -33,6 +33,8 @@ public class BasicEnemy : MonoBehaviour
         }
         else
         transform.localPosition += transform.forward * speed * Time.deltaTime;
+
+        sprite.transform.Rotate(Vector3.forward * 500 * Time.deltaTime);
     }
     public virtual IEnumerator EnemyBehaviour()
     {

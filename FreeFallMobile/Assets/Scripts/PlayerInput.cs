@@ -75,26 +75,7 @@ public class PlayerInput : MonoBehaviour
         if (other.transform.gameObject.GetComponent<BasicEnemy>())
         {
             gameManager.GetComponent<GameManagerScript>().EnemyDeath(0, other.transform.gameObject);
-
-            if (damageCount / health > damageImages.Length)
-            {
-                SceneManager.LoadScene(0, LoadSceneMode.Single);
-                return;
-            }
-            if (!invinc)
-            {
-                if (damageCount == health)
-                {
-                    damageImages[0].GetComponent<Image>().enabled = true;
-                }
-                else if (damageCount == health * 2)
-                {
-                    damageImages[1].GetComponent<Image>().enabled = true;
-                }
-                Debug.Log(damageCount);
-                damageCount++;
-                StartCoroutine("InvinceTimer");
-            }
+            TakeDamage();
         }
        
     }
@@ -104,4 +85,26 @@ public class PlayerInput : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         invinc = false;
     }
+    void TakeDamage()
+    {
+        if (damageCount / health > damageImages.Length)
+        {
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
+            return;
+        }
+        if (!invinc)
+        {
+            if (damageCount == health)
+            {
+                damageImages[0].GetComponent<Image>().enabled = true;
+            }
+            else if (damageCount == health * 2)
+            {
+                damageImages[1].GetComponent<Image>().enabled = true;
+            }
+            Debug.Log(damageCount);
+            damageCount++;
+            StartCoroutine("InvinceTimer");
+        }
+    } 
 }

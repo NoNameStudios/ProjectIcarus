@@ -17,6 +17,8 @@ public class SpawnManager : MonoBehaviour
     {
         if (canSpawn)
         {
+            if (spawnPoints[spawnNumber].GetComponent<ParticleSystem>())
+                spawnPoints[spawnNumber].GetComponent<ParticleSystem>().Play();
             Instantiate(enemy, spawnPoints[spawnNumber].transform.position, Quaternion.identity);
             //preSpawnNumber = spawnNumber;
             StartCoroutine("SpawnTimer");
