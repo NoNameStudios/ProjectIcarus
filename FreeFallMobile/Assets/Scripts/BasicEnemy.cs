@@ -34,7 +34,8 @@ public class BasicEnemy : MonoBehaviour
         else
         transform.localPosition += transform.forward * speed * Time.deltaTime;
 
-        sprite.transform.Rotate(Vector3.forward * 500 * Time.deltaTime);
+        //sprite.transform.Rotate(Vector3.up * 500 * Time.deltaTime);
+        sprite.transform.RotateAround(transform.position, transform.forward, Time.deltaTime * 500f);
     }
     public virtual IEnumerator EnemyBehaviour()
     {
