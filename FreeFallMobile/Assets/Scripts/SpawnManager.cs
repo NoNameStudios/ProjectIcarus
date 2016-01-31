@@ -27,7 +27,7 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnTimer()
     {
         canSpawn = false;
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.1f); //.1f default
         canSpawn = true;
         yield return null;
     }
