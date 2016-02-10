@@ -8,6 +8,9 @@ public class GameManagerScript : MonoBehaviour
     public GameObject scoreCounter;
     int score = 0;
 
+    // reference to destroy off screen script
+    DestroyOffScreen subtractScore; 
+
 	void Awake ()
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
@@ -24,5 +27,12 @@ public class GameManagerScript : MonoBehaviour
         enemies.Remove(enemy);
         scoreCounter.GetComponent<Text>().text = "" + this.score;
         Destroy(enemy);
+
+        // subtract score if enemy is not destroyed by player
+        subtractScore = gameObject.GetComponent<DestroyOffScreen>();
+        if(enemies != null)
+        {
+            this.score--;
+        }
     }
 }

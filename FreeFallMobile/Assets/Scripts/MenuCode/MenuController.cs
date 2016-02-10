@@ -12,8 +12,8 @@ public class MenuController : MonoBehaviour
     {
         cameraMain.transform.Rotate(new Vector3(1,1,0), 10 * Time.deltaTime);
     }
-    public void LoadGame()
+    public void LoadGame(int scene)
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 }
